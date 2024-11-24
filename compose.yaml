@@ -1,0 +1,14 @@
+services:
+  microservicio2:
+    build: .
+    ports:
+      - "8080:8080"
+    networks:
+      - mi_red  
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev # Si necesitas usar algún perfil en Spring Boot
+
+networks:
+  mi_red:
+    driver: bridge
+
